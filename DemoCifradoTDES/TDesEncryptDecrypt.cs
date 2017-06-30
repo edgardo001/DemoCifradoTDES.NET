@@ -58,10 +58,9 @@ namespace DemoCifradoTDES
                     return encrypt.TransformFinalBlock(src, 0, src.Length);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw new Exception(ex.Message, ex);
             }
         }
         /// <summary>
