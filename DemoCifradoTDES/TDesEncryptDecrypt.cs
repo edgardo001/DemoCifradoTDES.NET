@@ -12,7 +12,7 @@ namespace DemoCifradoTDES
         // AesCryptoServiceProvider
         private TripleDESCryptoServiceProvider myTDes = new TripleDESCryptoServiceProvider();
         /// <summary>
-        /// Vector de Inicializacion: No se puede encriptar sin él. Es de 8 bytes de longitud para el algoritmo de Rijndael. No es una 2ª llave, por lo tanto, no se trata de una dato que haya que esconder, únicamente hay que considerar que hay que usar el mismo IV para encriptar/desencriptar un mensaje concreto. Un error común es utilizar el mismo vector de inicialización en todas las encriptaciones. Utilizar siempre un mismo IV es equivalente en seguridad a no utilizar encriptación.
+        /// Vector de Inicializacion: No se puede encriptar sin él. Es de 8 bytes de longitud. No es una 2ª llave, por lo tanto, no se trata de una dato que haya que esconder, únicamente hay que considerar que hay que usar el mismo IV para encriptar/desencriptar un mensaje concreto. Un error común es utilizar el mismo vector de inicialización en todas las encriptaciones. Utilizar siempre un mismo IV es equivalente en seguridad a no utilizar encriptación.
         /// </summary>
         private const string TDesIV = "!QAZ2WSX";//8
         /// <summary>
