@@ -40,11 +40,11 @@ namespace DemoCifradoTDES
                 TDesEncryptDecrypt tDesEncryptDecrypt = new TDesEncryptDecrypt();
 
                 byte[] archivoOriginal = File.ReadAllBytes(rutaOriginal);
-                byte[] encrypted = tDesEncryptDecrypt.Encrypt256(archivoOriginal);
+                byte[] encrypted = tDesEncryptDecrypt.Encrypt(archivoOriginal);
                 File.WriteAllBytes(rutaDestinoEnc, encrypted);
 
                 byte[] archivoEncriptado = File.ReadAllBytes(rutaDestinoEnc);
-                byte[] desencrypted = tDesEncryptDecrypt.Decrypt256(archivoEncriptado);
+                byte[] desencrypted = tDesEncryptDecrypt.Decrypt(archivoEncriptado);
                 File.WriteAllBytes(rutaDestinoDesEnc, desencrypted);
 
                 Console.WriteLine("Archivo Encriptado en: {0}", rutaDestinoEnc);
@@ -66,9 +66,9 @@ namespace DemoCifradoTDES
                 string original = "Here is some data to encrypt!";
                 TDesEncryptDecrypt a = new TDesEncryptDecrypt();
 
-                byte[] encrypted = a.Encrypt256(Encoding.ASCII.GetBytes(original));
+                byte[] encrypted = a.Encrypt(Encoding.ASCII.GetBytes(original));
                 string b64Encrypted = TDesEncryptDecrypt.byteArrayToB64(encrypted);
-                string roundtrip = Encoding.ASCII.GetString(a.Decrypt256(encrypted));
+                string roundtrip = Encoding.ASCII.GetString(a.Decrypt(encrypted));
 
                 //Display the original data and the decrypted data.
                 Console.WriteLine("Original:    {0}", original);

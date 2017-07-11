@@ -48,7 +48,7 @@ namespace DemoCifradoTDES
         /// </summary>
         /// <param name="src"></param>
         /// <returns></returns>
-        public byte[] Encrypt256(byte[] src)
+        public byte[] Encrypt(byte[] src)
         {
             try
             {
@@ -66,7 +66,7 @@ namespace DemoCifradoTDES
         /// <summary>
         /// AES decryption
         /// </summary>
-        public byte[] Decrypt256(byte[] src)
+        public byte[] Decrypt(byte[] src)
         {
             try
             {
